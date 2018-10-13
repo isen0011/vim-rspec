@@ -47,7 +47,7 @@ function! s:RunSpecs(spec_location)
 endfunction
 
 function! s:InSpecFile()
-  return match(expand("%"), "_spec.rb$") != -1
+  return (match(expand("%"), "_spec.rb$") != -1) || (match(expand("%"), ".feature$") != -1)
 endfunction
 
 function! s:RspecCommand()
